@@ -3,7 +3,7 @@
  * Copyright (C) 2006-2017 ADempiere Foundation, All Rights Reserved.         *
  * This program is free software, you can redistribute it and/or modify it    *
  * under the terms version 2 of the GNU General Public License as published   *
- * or (at your option) any later version.										*
+ * or (at your option) any later version.									  *
  * by the Free Software Foundation. This program is distributed in the hope   *
  * that it will be useful, but WITHOUT ANY WARRANTY, without even the implied *
  * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.           *
@@ -288,6 +288,36 @@ public interface I_I_Budget
 	public int getC_Project_ID();
 
 	public org.compiere.model.I_C_Project getC_Project() throws RuntimeException;
+
+    /** Column name C_ProjectPhase_ID */
+    public static final String COLUMNNAME_C_ProjectPhase_ID = "C_ProjectPhase_ID";
+
+	/** Set Project Phase.
+	  * Phase of a Project
+	  */
+	public void setC_ProjectPhase_ID (int C_ProjectPhase_ID);
+
+	/** Get Project Phase.
+	  * Phase of a Project
+	  */
+	public int getC_ProjectPhase_ID();
+
+	public org.compiere.model.I_C_ProjectPhase getC_ProjectPhase() throws RuntimeException;
+
+    /** Column name C_ProjectTask_ID */
+    public static final String COLUMNNAME_C_ProjectTask_ID = "C_ProjectTask_ID";
+
+	/** Set Project Task.
+	  * Actual Project Task in a Phase
+	  */
+	public void setC_ProjectTask_ID (int C_ProjectTask_ID);
+
+	/** Get Project Task.
+	  * Actual Project Task in a Phase
+	  */
+	public int getC_ProjectTask_ID();
+
+	public org.compiere.model.I_C_ProjectTask getC_ProjectTask() throws RuntimeException;
 
     /** Column name C_SalesRegion_ID */
     public static final String COLUMNNAME_C_SalesRegion_ID = "C_SalesRegion_ID";
@@ -767,6 +797,32 @@ public interface I_I_Budget
 	  * Key of the Product
 	  */
 	public String getProductValue();
+
+    /** Column name ProjectPhaseName */
+    public static final String COLUMNNAME_ProjectPhaseName = "ProjectPhaseName";
+
+	/** Set Project Phase.
+	  * Name of the Project Phase
+	  */
+	public void setProjectPhaseName (String ProjectPhaseName);
+
+	/** Get Project Phase.
+	  * Name of the Project Phase
+	  */
+	public String getProjectPhaseName();
+
+    /** Column name ProjectTaskName */
+    public static final String COLUMNNAME_ProjectTaskName = "ProjectTaskName";
+
+	/** Set Project Task.
+	  * Task of the Project
+	  */
+	public void setProjectTaskName (String ProjectTaskName);
+
+	/** Get Project Task.
+	  * Task of the Project
+	  */
+	public String getProjectTaskName();
 
     /** Column name ProjectValue */
     public static final String COLUMNNAME_ProjectValue = "ProjectValue";

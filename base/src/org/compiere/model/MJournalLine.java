@@ -19,6 +19,7 @@ package org.compiere.model;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Properties;
 
 import org.compiere.process.DocumentReversalLineEnable;
@@ -98,6 +99,19 @@ public class MJournalLine extends X_GL_JournalLine implements DocumentReversalLi
 
 	/** Parent					*/
 	private MJournal parentJournal = null;
+	
+    /**
+     * 	Get active MGLBudgetPlanDetails of GL Budget
+     *	@param parent GL BudgetPlan
+     *	@return array of allocations
+     */
+    public static List<MJournalLine> getJournalLines(MJournal parent) {
+        final String whereClause = "GL_Journal_ID=? AND IsActive='Y'";
+        List<MJournalLine> list = new Query(parent.getCtx(), MJournalLine.Table_Name, whereClause, parent.get_TrxName())
+        .setParameters(parent.getGL_Journal_ID())
+        .list();
+        return list;
+    } //    
 	
 	/**
 	 * 	Get Parent

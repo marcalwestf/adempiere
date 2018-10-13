@@ -3,7 +3,7 @@
  * Copyright (C) 2006-2017 ADempiere Foundation, All Rights Reserved.         *
  * This program is free software, you can redistribute it and/or modify it    *
  * under the terms version 2 of the GNU General Public License as published   *
- * or (at your option) any later version.										*
+ * or (at your option) any later version.									  *
  * by the Free Software Foundation. This program is distributed in the hope   *
  * that it will be useful, but WITHOUT ANY WARRANTY, without even the implied *
  * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.           *
@@ -192,6 +192,29 @@ public class X_GL_JournalLine extends PO implements I_GL_JournalLine, I_Persiste
 			return "Y".equals(oo);
 		}
 		return false;
+	}
+
+	/** Set Document Org.
+		@param AD_OrgDoc_ID 
+		Document Organization (independent from account organization)
+	  */
+	public void setAD_OrgDoc_ID (int AD_OrgDoc_ID)
+	{
+		if (AD_OrgDoc_ID < 1) 
+			set_Value (COLUMNNAME_AD_OrgDoc_ID, null);
+		else 
+			set_Value (COLUMNNAME_AD_OrgDoc_ID, Integer.valueOf(AD_OrgDoc_ID));
+	}
+
+	/** Get Document Org.
+		@return Document Organization (independent from account organization)
+	  */
+	public int getAD_OrgDoc_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_AD_OrgDoc_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
 	}
 
 	/** Set Trx Organization.
@@ -539,6 +562,34 @@ public class X_GL_JournalLine extends PO implements I_GL_JournalLine, I_Persiste
 		return ii.intValue();
 	}
 
+	public I_C_Period getC_Period() throws RuntimeException
+    {
+		return (I_C_Period)MTable.get(getCtx(), I_C_Period.Table_Name)
+			.getPO(getC_Period_ID(), get_TrxName());	}
+
+	/** Set Period.
+		@param C_Period_ID 
+		Period of the Calendar
+	  */
+	public void setC_Period_ID (int C_Period_ID)
+	{
+		if (C_Period_ID < 1) 
+			set_Value (COLUMNNAME_C_Period_ID, null);
+		else 
+			set_Value (COLUMNNAME_C_Period_ID, Integer.valueOf(C_Period_ID));
+	}
+
+	/** Get Period.
+		@return Period of the Calendar
+	  */
+	public int getC_Period_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_C_Period_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
 	public org.compiere.model.I_C_Project getC_Project() throws RuntimeException
     {
 		return (org.compiere.model.I_C_Project)MTable.get(getCtx(), org.compiere.model.I_C_Project.Table_Name)
@@ -562,6 +613,62 @@ public class X_GL_JournalLine extends PO implements I_GL_JournalLine, I_Persiste
 	public int getC_Project_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_Project_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	public I_C_ProjectPhase getC_ProjectPhase() throws RuntimeException
+    {
+		return (I_C_ProjectPhase)MTable.get(getCtx(), I_C_ProjectPhase.Table_Name)
+			.getPO(getC_ProjectPhase_ID(), get_TrxName());	}
+
+	/** Set Project Phase.
+		@param C_ProjectPhase_ID 
+		Phase of a Project
+	  */
+	public void setC_ProjectPhase_ID (int C_ProjectPhase_ID)
+	{
+		if (C_ProjectPhase_ID < 1) 
+			set_Value (COLUMNNAME_C_ProjectPhase_ID, null);
+		else 
+			set_Value (COLUMNNAME_C_ProjectPhase_ID, Integer.valueOf(C_ProjectPhase_ID));
+	}
+
+	/** Get Project Phase.
+		@return Phase of a Project
+	  */
+	public int getC_ProjectPhase_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_C_ProjectPhase_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	public I_C_ProjectTask getC_ProjectTask() throws RuntimeException
+    {
+		return (I_C_ProjectTask)MTable.get(getCtx(), I_C_ProjectTask.Table_Name)
+			.getPO(getC_ProjectTask_ID(), get_TrxName());	}
+
+	/** Set Project Task.
+		@param C_ProjectTask_ID 
+		Actual Project Task in a Phase
+	  */
+	public void setC_ProjectTask_ID (int C_ProjectTask_ID)
+	{
+		if (C_ProjectTask_ID < 1) 
+			set_Value (COLUMNNAME_C_ProjectTask_ID, null);
+		else 
+			set_Value (COLUMNNAME_C_ProjectTask_ID, Integer.valueOf(C_ProjectTask_ID));
+	}
+
+	/** Get Project Task.
+		@return Actual Project Task in a Phase
+	  */
+	public int getC_ProjectTask_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_C_ProjectTask_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
@@ -808,6 +915,30 @@ public class X_GL_JournalLine extends PO implements I_GL_JournalLine, I_Persiste
 		return false;
 	}
 
+	/** Set Sales Transaction.
+		@param IsSOTrx 
+		This is a Sales Transaction
+	  */
+	public void setIsSOTrx (boolean IsSOTrx)
+	{
+		set_Value (COLUMNNAME_IsSOTrx, Boolean.valueOf(IsSOTrx));
+	}
+
+	/** Get Sales Transaction.
+		@return This is a Sales Transaction
+	  */
+	public boolean isSOTrx () 
+	{
+		Object oo = get_Value(COLUMNNAME_IsSOTrx);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
 	/** Set Line No.
 		@param Line 
 		Unique line for this document
@@ -862,6 +993,26 @@ public class X_GL_JournalLine extends PO implements I_GL_JournalLine, I_Persiste
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
+	}
+
+	/** Set Percent.
+		@param Percent 
+		Percentage
+	  */
+	public void setPercent (BigDecimal Percent)
+	{
+		set_Value (COLUMNNAME_Percent, Percent);
+	}
+
+	/** Get Percent.
+		@return Percentage
+	  */
+	public BigDecimal getPercent () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_Percent);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
 	}
 
 	/** Set Processed.

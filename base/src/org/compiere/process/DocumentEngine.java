@@ -32,6 +32,7 @@ import org.compiere.interfaces.Server;
 import org.compiere.model.MAcctSchema;
 import org.compiere.model.MAllocationHdr;
 import org.compiere.model.MBankStatement;
+import org.compiere.model.MBudgetPeriod;
 import org.compiere.model.MCash;
 import org.compiere.model.MClient;
 import org.compiere.model.MColumn;
@@ -1190,6 +1191,17 @@ public class DocumentEngine implements DocAction
 					options[index++] = DocumentEngine.ACTION_Reverse_Correct;
 					options[index++] = DocumentEngine.ACTION_Reverse_Accrual;
 				}
+		}
+		/********************
+		 *  Budget Period
+		 */
+		else if(AD_Table_ID == MBudgetPeriod.Table_ID)
+		{
+			// Complete                    ..  CO
+			if (docStatus.equals(DocumentEngine.STATUS_Completed))
+			{
+				options[index++] = DocumentEngine.ACTION_Void;
+			}
 		}
 		return index;
 	}
