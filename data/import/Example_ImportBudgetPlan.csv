@@ -1,0 +1,8 @@
+OrgDocValue,BPartnerValue,AccountValue,PeriodName,Percent,AmtAcctCr,AmtAcctDr,ProductValue,Qty,ProjectValue,ActivityValue,CampaignValue,PercentageBaseName,Operator,SubAccountValue,PeriodFromName,PeriodToName,Amount,IsSOTrx,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+HQ,,11100,2018-01,,20000,,Elm,,,,,,,,,,,N,,,,,,, ,, ,, , ,, , ,,,0,,,,,,,,,,,,,, 
+HQ,JoeBlock,12110,2018-10,10,,,oak,,,,,,,,,,,N,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+HQ,,12110,2018-12,,,,Elm,1000,,,,,,,,,,Y,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+HQ,,,,,,150000,,,Landscape,,,,,,,,,Y,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+HQ,JoeBlock,11100,2018-9,30,,,oak,,,,,12120,-,,,,50000,Y,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+HQ,JoeBlock,11100,2018-9,20,,,Elm,,,,,12120,+,12220,2018-05,2018-06,,Y,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+HQ,,12110,2018-12,,50000,,Elm,,,,,,,,,,,Y,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
